@@ -8,6 +8,7 @@ export type Project = {
   theme: "dark" | "light";
   keywords: string[];
   coverLabel: string;
+  coverSrc?: string;
   facts: { label: string; value: string }[];
   sections: { id: string; eyebrow: string; title: string; body: string; points?: string[]; media?: string }[];
 };
@@ -51,6 +52,7 @@ export const projects: Project[] = [
     theme: "light",
     keywords: ["产品定义", "智能硬件", "STM32", "IoT", "PCB", "App 交互"],
     coverLabel: "请补充：泡茶机整机封面图",
+    coverSrc: "/assets/tea-machine-ui-concept.webp",
     facts: [
       { label: "项目时间", value: "待补充" },
       { label: "我的角色", value: "产品定义 / 硬件与嵌入式开发" },
