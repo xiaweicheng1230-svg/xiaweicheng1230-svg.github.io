@@ -14,7 +14,7 @@ export function ProjectCard({ project }: { project: Project }) {
           <div className="tag-list">{project.keywords.map((tag) => <span key={tag}>{tag}</span>)}</div>
           <Link href={`/projects/${project.slug}`} className="text-link">查看项目详情 <span aria-hidden="true">↗</span></Link>
         </Reveal>
-        <Reveal className="project-visual"><MediaPlaceholder label={project.coverLabel} src={project.coverSrc} alt={`${project.title}概念 UI`} dark={project.theme === "dark"} /></Reveal>
+        <Reveal className="project-visual"><MediaPlaceholder label={project.coverLabel} src={project.coverSrc} badge={project.coverBadge} alt={`${project.title}工业设计概念图`} dark={project.theme === "dark"} /></Reveal>
       </div>
     </article>
   );

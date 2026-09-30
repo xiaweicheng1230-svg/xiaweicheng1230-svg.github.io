@@ -52,12 +52,12 @@ export function Reveal({ children, className = "" }: { children: React.ReactNode
   return <div ref={setNode} className={`reveal ${visible ? "is-visible" : ""} ${className}`}>{children}</div>;
 }
 
-export function MediaPlaceholder({ label, src, alt, dark = false, className = "" }: { label: string; src?: string; alt?: string; dark?: boolean; className?: string }) {
+export function MediaPlaceholder({ label, src, alt, badge = "CONCEPT UI", dark = false, className = "" }: { label: string; src?: string; alt?: string; badge?: string; dark?: boolean; className?: string }) {
   const [open, setOpen] = useState(false);
   return (
     <>
       <button type="button" className={`media-placeholder ${src ? "has-image" : ""} ${dark ? "dark" : ""} ${className}`} onClick={() => setOpen(true)} aria-label={`${alt || label}，点击放大`}>
-        {src ? <><img src={src} alt={alt || label} loading="lazy" /><span className="concept-badge">CONCEPT UI</span></> : <><span className="media-grid" aria-hidden="true" /><span className="media-corner">ASSET / 待替换</span><span className="media-label">{label}</span></>}
+        {src ? <><img src={src} alt={alt || label} loading="lazy" /><span className="concept-badge">{badge}</span></> : <><span className="media-grid" aria-hidden="true" /><span className="media-corner">ASSET / 待替换</span><span className="media-label">{label}</span></>}
         <span className="media-zoom">点击放大</span>
       </button>
       {open && <div className="lightbox" role="dialog" aria-modal="true" aria-label="素材预览" onClick={() => setOpen(false)}>
