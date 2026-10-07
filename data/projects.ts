@@ -11,7 +11,7 @@ export type Project = {
   coverSrc?: string;
   coverBadge?: string;
   facts: { label: string; value: string }[];
-  sections: { id: string; eyebrow: string; title: string; body: string; points?: string[]; media?: string }[];
+  sections: { id: string; eyebrow: string; title: string; body: string; points?: string[]; media?: string; mediaSrc?: string; mediaBadge?: string; mediaAlt?: string }[];
 };
 
 export const projects: Project[] = [
@@ -52,7 +52,7 @@ export const projects: Project[] = [
     role: "产品定义 / 硬件与嵌入式开发",
     theme: "light",
     keywords: ["产品定义", "智能硬件", "STM32", "IoT", "PCB", "App 交互"],
-    coverLabel: "请补充：泡茶机整机封面图",
+    coverLabel: "智能泡茶机工业设计概念图",
     coverSrc: "/assets/tea-machine-id-concept.webp",
     coverBadge: "ID CONCEPT",
     facts: [
@@ -61,15 +61,15 @@ export const projects: Project[] = [
       { label: "负责范围", value: "流程、交互、电路、固件、IoT 与整机联调" },
     ],
     sections: [
-      { id: "background", eyebrow: "01 / 项目背景", title: "从一句真实需求出发：到家就能喝到温度合适的茶", body: "项目围绕日常泡茶过程中的等待、操作与温度管理展开，从产品定义开始建立完整智能硬件原型。", media: "请补充：泡茶机整机与使用场景图" },
-      { id: "problem", eyebrow: "02 / 用户问题", title: "流程长、状态多，任何一步缺失都会破坏体验", body: "将加水、称茶、加热、出水、保温和预约串联为完整流程，同时处理缺水、缺茶和设备异常等反馈与兜底逻辑。" },
-      { id: "role", eyebrow: "03 / 我的角色", title: "同时连接产品、交互和工程实现", body: "我负责从场景定义到软硬件原型的主要工作，包括双端交互规划、控制逻辑、原理图与 PCB、固件开发、IoT 接入和 Bring-up。" },
+      { id: "background", eyebrow: "01 / 项目背景", title: "从一句真实需求出发：到家就能喝到温度合适的茶", body: "最初需求聚焦三个场景：手机一键泡茶、缺水或缺茶提醒，以及在外出时提前预约并在完成后保温。项目由此从单点控制扩展为一套覆盖储茶、储水、泡茶、保温和远程连接的完整系统。", media: "智能泡茶机家居使用场景概念图", mediaSrc: "/assets/tea-machine-lifestyle.webp", mediaBadge: "ID CONCEPT / SCENE", mediaAlt: "智能泡茶机在家居茶空间中自动出茶的工业设计概念图" },
+      { id: "problem", eyebrow: "02 / 用户问题", title: "流程长、状态多，任何一步缺失都会破坏体验", body: "一键泡茶并不是单一开关：设备需要先确认水量和茶量，再协调温度、称重、时间和继电器动作；远程指令还必须让用户知道设备是否具备执行条件。" },
+      { id: "role", eyebrow: "03 / 我的角色", title: "同时连接产品、交互和工程实现", body: "我从使用场景出发定义功能流程，并推进 STM32 控制、传感器接入、原理图与 PCB、OLED 本地反馈、ESP8266 联网和整机 Bring-up，让产品逻辑与硬件能力对应起来。", media: "智能泡茶机实际电路原理图", mediaSrc: "/assets/tea-machine-schematic.webp", mediaBadge: "REAL SCHEMATIC", mediaAlt: "智能泡茶机 STM32 主控、传感器、继电器、OLED 与 ESP8266 电路原理图" },
       { id: "constraints", eyebrow: "04 / 目标与限制", title: "安全、时序与可理解反馈", body: "加热与出水涉及安全边界；传感器状态、执行器动作和预约任务需要可靠时序；用户需要在本地屏与手机端理解设备当前状态。" },
-      { id: "breakdown", eyebrow: "05 / 需求拆解", title: "一条主流程，多个异常分支", body: "以泡茶任务为主线，拆分加水、称茶、加热、出水、保温、预约与状态反馈，并为关键环节设计异常提示和兜底。", media: "请补充：产品流程图 / 状态机" },
-      { id: "design", eyebrow: "06 / 方案设计", title: "OLED 本地交互 + App 远程交互", body: "规划 OLED 本地屏和手机 App 双端交互；通过 ESP8266、MQTT 与阿里云 IoT 实现远程控制、预约下发和状态上报。", media: "请补充：tea-machine-ui / App 与 OLED 界面" },
-      { id: "prototype", eyebrow: "07 / 原型与实现", title: "以 STM32 为核心连接感知与执行", body: "使用 STM32F103 和 HAL 完成主要控制功能，接入 DS18B20 测温、HX711 称重、水位 ADC 与 DS1302 定时，并使用双继电器控制泡茶与保温。", points: ["独立完成原理图与 PCB", "完成打样、焊接和整机 Bring-up", "实现主要传感、控制与联网链路"], media: "请补充：tea-machine-pcb / 整机内部结构" },
-      { id: "testing", eyebrow: "08 / 测试和迭代", title: "围绕整机链路逐项验证", body: "需要补充具体测试用例、异常注入记录和版本迭代数据。当前页面仅展示已确认的实现范围。" },
-      { id: "result", eyebrow: "09 / 项目成果", title: "已完成可运行的完整原型链路", body: "项目覆盖产品定义、硬件实现、嵌入式控制与 IoT 连接。原型演示视频、最终照片与量化结果待补充。" },
+      { id: "breakdown", eyebrow: "05 / 需求拆解", title: "一条主流程，多个异常分支", body: "系统分为四层：DS18B20、HX711、水位 ADC 与 DS1302 负责感知；STM32F103C8T6 负责状态与时序；双继电器和 OLED 完成执行与本地反馈；ESP8266 通过 MQTT 与阿里云 IoT 连接手机端。", media: "智能泡茶机系统架构与任务流程", mediaSrc: "/assets/tea-machine-system-flow.svg", mediaBadge: "SYSTEM FLOW", mediaAlt: "智能泡茶机从传感器、STM32 主控、执行器到 IoT 云端的系统架构图" },
+      { id: "design", eyebrow: "06 / 方案设计", title: "OLED 本地交互 + App 远程交互", body: "本地屏承担时间、联网状态、水温和水量等即时反馈；手机端负责一键启动、温度设置、预约下发和设备状态查看。ESP8266 订阅控制指令并上报设备属性，让两端围绕同一状态工作。", media: "设备端与手机端交互概念图", mediaSrc: "/assets/tea-machine-ui-concept.webp", mediaBadge: "INTERACTION CONCEPT", mediaAlt: "智能泡茶机 OLED 设备界面与手机远程控制界面概念图" },
+      { id: "prototype", eyebrow: "07 / 原型与实现", title: "以 STM32 为核心连接感知与执行", body: "使用 STM32F103C8T6 与 HAL 完成主要控制功能，接入 DS18B20 测温、HX711 称重、水位 ADC、DS1302 时钟、OLED 与 ESP8266，并以两路继电器分别控制泡茶和保温。", points: ["完成原理图、PCB Layout 与元器件集成", "完成打样、焊接和硬件 Bring-up", "程序包含传感采集、OLED 显示、预约与 MQTT 收发模块"], media: "智能泡茶机实际 PCB 原型", mediaSrc: "/assets/tea-machine-pcb-prototype.webp", mediaBadge: "REAL PROTOTYPE", mediaAlt: "智能泡茶机未上电 PCB、OLED、ESP8266、水位与温度传感器实物" },
+      { id: "testing", eyebrow: "08 / 测试和迭代", title: "从上电状态开始验证完整链路", body: "现有资料保留了上电前后实物状态：主控、OLED、ESP8266、传感器与继电器已完成连接，OLED 能显示日期、时间、联网状态、水位和水温。完整测试用例、异常注入记录与长期稳定性数据仍待补充，因此不在页面中虚构。", media: "智能泡茶机 PCB 上电状态", mediaSrc: "/assets/tea-machine-pcb-powered.webp", mediaBadge: "POWERED PROTOTYPE", mediaAlt: "智能泡茶机 PCB 上电后 OLED 显示设备状态的实物照片" },
+      { id: "result", eyebrow: "09 / 项目成果", title: "形成从需求到联网原型的完整证据链", body: "现有资料包含产品需求、原理图、PCB Layout、元器件清单、STM32 工程代码、IoT 通信模块与上电实物照片，可确认项目已完成从方案定义到硬件上电和联网程序实现。产品化外壳与交互界面为后续概念设计，不作为已量产成果表述。", media: "智能泡茶机 PCB Layout", mediaSrc: "/assets/tea-machine-pcb-layout.webp", mediaBadge: "PCB LAYOUT", mediaAlt: "智能泡茶机控制板 PCB Layout 图" },
       { id: "reflection", eyebrow: "10 / 项目复盘", title: "好的智能硬件体验，来自状态的一致性", body: "本地操作、远程指令、传感器状态和执行器反馈需要始终保持一致。后续可进一步补充安全验证和长时间稳定性测试。" },
     ],
   },
