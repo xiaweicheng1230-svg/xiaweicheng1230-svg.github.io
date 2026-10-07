@@ -4,11 +4,11 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 
 const nav = [
-  ["首页", "/#home"],
+  ["兴趣", "/#interests"],
+  ["校园", "/#campus"],
   ["作品", "/#work"],
-  ["关于我", "/#about"],
   ["经历", "/#experience"],
-  ["联系方式", "/#contact"],
+  ["联系", "/#contact"],
 ];
 
 export function Header() {
