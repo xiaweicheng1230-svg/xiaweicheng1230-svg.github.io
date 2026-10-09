@@ -14,3 +14,18 @@
 - `tea-machine-pcb-layout.webp`：真实 PCB Layout
 - `tea-machine-pcb-prototype.webp`：真实未上电原型
 - `tea-machine-pcb-powered.webp`：真实上电原型
+
+## RoboMaster 现有素材
+
+- `rm-robot-prototype.webp`：实验室中的机器人真实样机照片
+- `rm-power-controller-cover.webp`：功率控制板 3D 渲染图
+
+## LensPilot AI 与摄影素材
+
+- `ai-photography-cover.webp`：LensPilot AI 产品场景概念图（AI 生成）
+- `ai-photography-analysis-ui.webp`：分析工作台概念界面（AI 生成）
+- `ai-photography-learning-profile.webp`：能力画像与学习计划概念界面（AI 生成）
+- `photo-daily-forest.webp`：个人摄影作品，树林与湖面
+- `photo-daily-sculpture.webp`：个人摄影作品，夜色雕塑
+- `photo-daily-sunset-detail.webp`：个人摄影作品，围栏与暮色
+- `photo-daily-night-drinks.webp`：个人摄影作品，夜晚饮品

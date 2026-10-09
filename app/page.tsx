@@ -16,7 +16,7 @@ const interests = [
     title: "摄影",
     english: "PHOTOGRAPHY",
     text: "我喜欢用取景、光线和色彩记录日常，也会从使用者的角度观察相机、影像与消费电子产品。",
-    asset: "请补充：代表性摄影作品 / 拍摄中的个人照片",
+    asset: "个人摄影作品",
   },
   {
     number: "02",
@@ -75,7 +75,12 @@ export default function Home() {
       <section id="interests" className="section interests-section">
         <div className="section-head interests-head"><p className="eyebrow">LIFE &amp; INTERESTS</p><h2>工作之外，<br />我如何观察世界。</h2></div>
         <Reveal className="interest-feature">
-          <MediaPlaceholder label={interests[0].asset} className="interest-media-main" />
+          <div className="photo-gallery" aria-label="夏炜城的日常摄影作品">
+            <MediaPlaceholder label="树林与湖面" src="/assets/photo-daily-forest.webp" alt="树林枝叶环绕湖面的个人摄影作品" badge="MY PHOTO / 01" className="photo-gallery-main" />
+            <MediaPlaceholder label="夜色雕塑" src="/assets/photo-daily-sculpture.webp" alt="黑色夜空下人物雕塑的个人摄影作品" badge="MY PHOTO / 02" />
+            <MediaPlaceholder label="围栏与暮色" src="/assets/photo-daily-sunset-detail.webp" alt="白色围栏与粉紫暮色的个人摄影作品" badge="MY PHOTO / 03" />
+            <MediaPlaceholder label="夜晚饮品" src="/assets/photo-daily-night-drinks.webp" alt="暖色灯光下蓝色饮品的个人摄影作品" badge="MY PHOTO / 04" />
+          </div>
           <div className="interest-copy"><span>{interests[0].number} / {interests[0].english}</span><h3>{interests[0].title}</h3><p>{interests[0].text}</p></div>
         </Reveal>
         <div className="interest-grid">
