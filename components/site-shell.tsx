@@ -57,7 +57,7 @@ export function MediaPlaceholder({ label, src, alt, badge = "CONCEPT UI", dark =
   return (
     <>
       <button type="button" className={`media-placeholder ${src ? "has-image" : ""} ${dark ? "dark" : ""} ${className}`} onClick={() => setOpen(true)} aria-label={`${alt || label}，点击放大`}>
-        {src ? <><img src={src} alt={alt || label} loading="lazy" /><span className="concept-badge">{badge}</span></> : <><span className="media-grid" aria-hidden="true" /><span className="media-corner">ASSET / 待替换</span><span className="media-label">{label}</span></>}
+        {src ? <><img src={src} alt={alt || label} loading="lazy" /><span className="concept-badge">{badge}</span>{badge.startsWith("AI生成") && <span className="generated-source-label">{label}</span>}</> : <><span className="media-grid" aria-hidden="true" /><span className="media-corner">ASSET / 待替换</span><span className="media-label">{label}</span></>}
         <span className="media-zoom">点击放大</span>
       </button>
       {open && <div className="lightbox" role="dialog" aria-modal="true" aria-label="素材预览" onClick={() => setOpen(false)}>

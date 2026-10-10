@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://xiaweicheng.zany-jelly-1334.chatgpt.site"),
   title: { default: "夏炜城｜智能硬件与 AI 产品经理", template: "%s｜夏炜城作品集" },
   description: "夏炜城的个人作品集，聚焦智能硬件、机器人、AI 产品、嵌入式开发与产品原型。",
   keywords: ["智能硬件产品经理", "AI 产品经理", "机器人", "嵌入式", "产品作品集", "夏炜城"],
