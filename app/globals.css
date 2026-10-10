@@ -21,3 +21,8 @@
 @media(prefers-reduced-motion:reduce){.project-scroll-shell{height:auto}.project-sticky{height:auto;position:relative}.project-track-viewport{padding:0 max(20px,calc((100vw - var(--max))/2));overflow:hidden}.project-track{width:auto;overflow-x:auto;scroll-snap-type:x mandatory;transform:none!important}.release-card{flex:0 0 min(84vw,1260px);opacity:1;transform:none;scroll-snap-align:center}}
 .release-copy h3{font-size:clamp(36px,3.5vw,58px);overflow-wrap:normal}
 @media(max-width:900px){.release-copy h3{font-size:clamp(34px,9vw,48px)}}
+
+.generated-source-label{position:absolute;left:18px;right:18px;bottom:48px;color:white;font-size:12px;line-height:1.5;text-shadow:0 1px 8px #000;padding:7px 10px;background:rgba(0,0,0,.32);border-radius:5px;text-align:left;z-index:2}
+
+.photo-gallery.travel-gallery{height:auto;grid-template-columns:repeat(2,minmax(0,1fr));grid-template-rows:none;gap:14px}.travel-gallery .media-placeholder{height:auto;aspect-ratio:3/2;min-width:0}.travel-gallery .travel-gallery-main{grid-column:1/-1;grid-row:auto}.travel-gallery .media-placeholder:nth-child(4){grid-column:auto}.travel-gallery .media-placeholder img{object-position:center}.travel-gallery .generated-source-label{left:12px;right:12px;bottom:38px}.travel-gallery .media-zoom{font-size:10px}.travel-gallery .concept-badge{font-size:10px}
+@media(max-width:560px){.photo-gallery.travel-gallery{grid-template-columns:1fr;gap:18px}.travel-gallery .media-placeholder{grid-column:1/-1;aspect-ratio:3/2}.travel-gallery .media-placeholder:nth-child(4){grid-column:1/-1}}

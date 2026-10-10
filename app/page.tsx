@@ -23,21 +23,21 @@ const interests = [
     title: "吉他",
     english: "GUITAR",
     text: "在节奏与反复练习中，享受从生疏到逐渐熟练的过程。",
-    asset: "请补充：弹吉他照片 / 乐器细节",
+    asset: "吉他练习",
   },
   {
     number: "03",
     title: "健身",
     english: "FITNESS",
     text: "用稳定的训练保持专注，也让目标、行动和反馈形成长期循环。",
-    asset: "请补充：健身训练照片",
+    asset: "健身训练",
   },
   {
     number: "04",
     title: "篮球",
     english: "BASKETBALL",
     text: "享受团队配合、临场判断，以及每一次攻防之后迅速调整。",
-    asset: "请补充：篮球比赛 / 球场生活照片",
+    asset: "篮球练习",
   },
 ];
 
@@ -75,17 +75,18 @@ export default function Home() {
       <section id="interests" className="section interests-section">
         <div className="section-head interests-head"><p className="eyebrow">LIFE &amp; INTERESTS</p><h2>工作之外，<br />我如何观察世界。</h2></div>
         <Reveal className="interest-feature">
-          <div className="photo-gallery" aria-label="夏炜城的日常摄影作品">
-            <MediaPlaceholder label="树林与湖面" src="/assets/photo-daily-forest.webp" alt="树林枝叶环绕湖面的个人摄影作品" badge="MY PHOTO / 01" className="photo-gallery-main" />
-            <MediaPlaceholder label="夜色雕塑" src="/assets/photo-daily-sculpture.webp" alt="黑色夜空下人物雕塑的个人摄影作品" badge="MY PHOTO / 02" />
-            <MediaPlaceholder label="围栏与暮色" src="/assets/photo-daily-sunset-detail.webp" alt="白色围栏与粉紫暮色的个人摄影作品" badge="MY PHOTO / 03" />
-            <MediaPlaceholder label="夜晚饮品" src="/assets/photo-daily-night-drinks.webp" alt="暖色灯光下蓝色饮品的个人摄影作品" badge="MY PHOTO / 04" />
+          <div className="photo-gallery travel-gallery" aria-label="夏炜城与鹿图成员的世界名胜AI合影">
+            <MediaPlaceholder label="巴黎铁塔" src="/assets/travel-paris-v1.webp" alt="夏炜城、罗宇伦、魏子奇在巴黎铁塔前的AI合影" badge="AI生成·鹿图" className="travel-gallery-main" />
+            <MediaPlaceholder label="维多利亚港" src="/assets/travel-victoria-v1.webp" alt="夏炜城、詹绍源、黎健毓在维多利亚港的AI合影" badge="AI生成·鹿图" />
+            <MediaPlaceholder label="自由女神像" src="/assets/travel-liberty-v1.webp" alt="夏炜城、唐博釜、彭鹏在自由女神像前的AI合影" badge="AI生成·鹿图" />
+            <MediaPlaceholder label="天安门广场" src="/assets/travel-tiananmen-v1.webp" alt="夏炜城、李彦臻、唐胤鑫在天安门广场的AI合影" badge="AI生成·鹿图" />
+            <MediaPlaceholder label="橘子洲头" src="/assets/travel-orange-isle-v1.webp" alt="夏炜城、涂腾辉在橘子洲头的AI合影" badge="AI生成·鹿图" />
           </div>
           <div className="interest-copy"><span>{interests[0].number} / {interests[0].english}</span><h3>{interests[0].title}</h3><p>{interests[0].text}</p></div>
         </Reveal>
         <div className="interest-grid">
           {interests.slice(1).map((interest) => <Reveal className="interest-card" key={interest.title}>
-            <MediaPlaceholder label={interest.asset} className="interest-media-small" />
+            <MediaPlaceholder label={interest.asset} src={`/assets/life-${interest.english.toLowerCase()}.webp`} badge="AI生成·鹿图" className="interest-media-small" />
             <div className="interest-card-copy"><span>{interest.number} / {interest.english}</span><h3>{interest.title}</h3><p>{interest.text}</p></div>
           </Reveal>)}
         </div>
@@ -94,7 +95,7 @@ export default function Home() {
       <section id="campus" className="campus-section">
         <div className="campus-inner">
           <Reveal className="campus-intro"><div><p className="eyebrow">CAMPUS LIFE</p><h2>课堂之外，<br />也是成长现场。</h2></div><p>我的大学生活不只发生在课堂。专业学习给了我技术基础，战队、协会与竞赛则让我在真实目标、有限资源和团队协作中，把想法一步步推进下去。</p></Reveal>
-          <Reveal className="campus-visual"><MediaPlaceholder label="请补充：校园生活 / 战队合影 / 实验室工作照片" dark /></Reveal>
+          <Reveal className="campus-visual"><MediaPlaceholder label="校园实验室" src="/assets/life-campus.webp" badge="AI生成·鹿图" dark /></Reveal>
           <div className="campus-list">{campusExperiences.map(([title, text], index) => <Reveal className="campus-row" key={title}><span>{String(index + 1).padStart(2, "0")}</span><h3>{title}</h3><p>{text}</p></Reveal>)}</div>
         </div>
       </section>
