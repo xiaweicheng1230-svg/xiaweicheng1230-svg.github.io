@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { Footer } from "@/components/footer";
+import { LensPilotCaseStudy } from "@/components/lenspilot-case-study";
 import { Header, MediaPlaceholder, Reveal } from "@/components/site-shell";
 import { getProject, projects } from "@/data/projects";
 
@@ -12,6 +13,7 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
   const project = getProject((await params).slug); if (!project) notFound();
   const current = projects.findIndex((item) => item.slug === project.slug);
   const previous = projects[(current - 1 + projects.length) % projects.length]; const next = projects[(current + 1) % projects.length];
+  if (project.slug === "ai-photography-assistant") return <><Header /><LensPilotCaseStudy project={project} previous={previous} next={next} /><Footer /></>;
   return <><Header /><main className={`detail-page ${project.theme}`}>
     <section className="detail-hero"><div className="detail-hero-inner"><p className="eyebrow">PROJECT {project.index} / CASE STUDY</p><h1>{project.title}</h1><p className="detail-summary">{project.summary}</p><div className="tag-list">{project.keywords.map((tag) => <span key={tag}>{tag}</span>)}</div><MediaPlaceholder label={project.coverLabel} src={project.coverSrc} badge={project.coverBadge} alt={project.coverLabel} dark={project.theme === "dark"} className="detail-cover" /></div></section>
     <section className="detail-overview section"><p className="eyebrow">PROJECT OVERVIEW</p><div className="fact-grid">{project.facts.map((fact) => <div key={fact.label}><span>{fact.label}</span><p>{fact.value}</p></div>)}</div></section>

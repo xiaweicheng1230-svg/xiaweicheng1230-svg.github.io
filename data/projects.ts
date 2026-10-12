@@ -88,9 +88,9 @@ export const projects: Project[] = [
     coverSrc: "/assets/ai-photography-cover.webp",
     coverBadge: "PRODUCT CONCEPT",
     facts: [
-      { label: "项目时间", value: "待补充" },
+      { label: "项目时间", value: "2026 · 进行中" },
       { label: "我的角色", value: "AI 产品经理 / 原型设计" },
-      { label: "负责范围", value: "洞察、MVP、PRD、UI/UX、Prompt 与评测设计" },
+      { label: "负责范围", value: "产品定义、PRD、交互、AI 规则与工程验证" },
     ],
     sections: [
       { id: "background", eyebrow: "01 / 项目背景", title: "拍到了，但不知道为什么不好", body: "摄影新手在拍摄现场常面临决策困难，拍摄后也缺少针对自身照片的结构化复盘指导。LensPilot AI 尝试把图像、拍摄参数和拍摄目标放进同一次分析。", media: "作为分析样片的个人摄影作品", mediaSrc: "/assets/photo-daily-forest.webp", mediaBadge: "MY PHOTOGRAPHY", mediaAlt: "夏炜城拍摄的树林与湖面照片，作为摄影 AI 助手的分析样片" },
