@@ -130,7 +130,6 @@ export function LensPilotCaseStudy({ project, previous, next }: { project: Proje
           </div>
           <p className="lp-disclaimer">概念演示：结构化 AI 诊断与 Next Shot 处于规划阶段；上传、校验、EXIF 与隐私处理已经完成本地验证。</p>
         </div>
-        <div className="lp-product-shot"><Image src="/assets/ai-photography-analysis-ui.webp" alt="LensPilot AI 分析工作台概念界面" width={1800} height={1100} sizes="(max-width: 980px) 94vw, 1180px" /><span>INTERACTION CONCEPT</span></div>
       </div>
     </section>
 

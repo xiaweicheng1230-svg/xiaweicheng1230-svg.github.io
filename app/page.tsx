@@ -60,7 +60,28 @@ export default function Home() {
     <Header />
     <main>
       <section id="home" className="hero">
-        <div className="hero-ambient" aria-hidden="true"><span /><span /></div>
+        <div className="hero-ambient" aria-hidden="true">
+          <svg className="ai-network" viewBox="0 0 760 760" role="presentation">
+            <g className="ai-links">
+              <path d="M108 210 252 128 380 214 532 120 658 226" />
+              <path d="M108 210 188 370 380 214 476 390 658 226" />
+              <path d="M188 370 96 538 282 626 476 390 648 526" />
+              <path d="M282 626 476 390 580 650" />
+              <path d="M252 128 282 626" />
+            </g>
+            <g className="ai-nodes">
+              <circle cx="108" cy="210" r="7" /><circle cx="252" cy="128" r="5" />
+              <circle cx="380" cy="214" r="9" /><circle cx="532" cy="120" r="5" />
+              <circle cx="658" cy="226" r="7" /><circle cx="188" cy="370" r="6" />
+              <circle cx="476" cy="390" r="8" /><circle cx="96" cy="538" r="5" />
+              <circle cx="282" cy="626" r="7" /><circle cx="648" cy="526" r="6" />
+              <circle cx="580" cy="650" r="5" />
+            </g>
+            <circle className="ai-core-ring" cx="380" cy="380" r="112" />
+            <circle className="ai-core-pulse" cx="380" cy="380" r="54" />
+            <circle className="ai-core" cx="380" cy="380" r="13" />
+          </svg>
+        </div>
         <div className="hero-inner">
           <p className="eyebrow">XIA WEICHENG · PRODUCT PORTFOLIO</p>
           <h1>让硬件、AI 与<br />真实场景发生连接。</h1>
